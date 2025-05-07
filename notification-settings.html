@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Configurações de Notificação</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+    }
+    label, select, button {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Configurações de Notificação</h2>
+
+  <label for="forma">Forma de Notificação:</label>
+  <select id="forma">
+    <option value="">Selecione...</option>
+    <option value="app">Pelo App</option>
+    <option value="email">Por E-mail</option>
+    <option value="whatsapp">Por WhatsApp</option>
+  </select>
+
+  <label for="frequencia">Frequência de Notificação:</label>
+  <select id="frequencia">
+    <option value="">Selecione...</option>
+    <option value="por_evento">Por Evento</option>
+    <option value="diario">Diário</option>
+    <option value="dia_programado">Por Dia Programado</option>
+  </select>
+
+  <button onclick="salvarConfiguracoes()">Salvar Configurações</button>
+
+  <script>
+    function salvarConfiguracoes() {
+      const forma = document.getElementById('forma').value;
+      const frequencia = document.getElementById('frequencia').value;
+
+      if (!forma || !frequencia) {
+        alert('Por favor, selecione todas as opções.');
+        return;
+      }
+
+      // Exibe no console ou pode enviar para o servidor depois
+      console.log('Forma de Notificação:', forma);
+      console.log('Frequência de Notificação:', frequencia);
+
+      alert(`Configurações salvas:\nForma: ${forma}\nFrequência: ${frequencia}`);
+    }
+  </script>
+
+</body>
+</html>
